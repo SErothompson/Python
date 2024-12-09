@@ -2,7 +2,7 @@ import face_recognition
 import cv2
 
 # Load a sample picture and learn how to recognize it.
-known_image = face_recognition.load_image_file("known_person3.jpg")
+known_image = face_recognition.load_image_file("known_person.jpg")
 known_face_encoding = face_recognition.face_encodings(known_image)[0]
 
 # Initialize some variables
@@ -10,7 +10,7 @@ face_locations = []
 face_encodings = []
 
 # Load an image with an unknown face
-unknown_image = face_recognition.load_image_file("unknown_person4.jpg")
+unknown_image = face_recognition.load_image_file("unknown_person.jpg")
 
 # Find all the faces and face encodings in the unknown image
 face_locations = face_recognition.face_locations(unknown_image)
