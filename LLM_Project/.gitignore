@@ -1,0 +1,5 @@
+gpt2-finetuned/*
+pdfs/*
+results/*
+finetuned_gpt2/*
+*.csv
