@@ -57,4 +57,15 @@ class MySQLDatabase:
             cursor.close()
 
 # Example usage
-db = MySQLDatabase("localhost", "root", "zAQ!08091983", "test")
+db = MySQLDatabase("localhost", "root", "", "test")
+db.execute_query("CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), age INT)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('John', 30)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Jane', 25)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Bob', 40)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Alice', 35)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Charlie', 45)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('David', 50)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Eve', 55)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Frank', 60)")
+db.execute_query("INSERT INTO users (name, age) VALUES ('Grace', 65)")
+print(db.execute_read_query("SELECT * FROM users WHERE age > 50"))
