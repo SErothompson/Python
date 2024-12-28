@@ -27,6 +27,6 @@ class DatabaseManager:
 # Usage
 with DatabaseManager('mydatabase.db') as db:
     db.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)')
-    db.execute('INSERT INTO users (name, age) VALUES (?, ?)', ('John', 30))
+    db.execute('INSERT INTO users (name, age) VALUES ("John", 30)')
     result = db.execute_query('SELECT * FROM users WHERE age > ?', (25,))
     print(result)
